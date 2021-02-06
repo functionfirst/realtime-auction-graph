@@ -49,8 +49,13 @@ UserSchema.index({
   email: 1
 })
 
+// @todo determine fields to remove based on permissions at some point?
+const userTypeComposerOptions = {
+  removeFields: ['createdAt', 'updatedAt']
+}
+
 const User = mongoose.model('User', UserSchema)
-const UserTC = composeWithMongoose(User)
+const UserTC = composeWithMongoose(User, userTypeComposerOptions)
 
 export {
   User,
