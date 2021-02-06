@@ -1,6 +1,8 @@
 import mongoose from 'mongoose'
 import timestamps from 'mongoose-timestamp'
 import { composeWithMongoose } from 'graphql-compose-mongoose'
+import { comparePassword, hashPassword } from '../utils/password.js'
+import { checkForUserErrors } from '../helpers/userHelper.js'
 
 const Schema = mongoose.Schema
 
@@ -40,6 +42,48 @@ const schemaOptions = {
 }
 
 const UserSchema = new Schema(fields, schemaOptions)
+
+/**
+ * Compare a given password with the database hash
+ */
+UserSchema.method('isPasswordValid', function (password) {
+	return comparePassword(password, this.password)
+})
+
+/**
+ * Authenticate the user by checking the account is not blocked
+ * and that the password is correct
+ */
+UserSchema.method('authenticate', function (password) {
+	if (this.blocked) {
+		throw new Error('Authentication failed. Error 2.');
+	}
+
+	if (!this.isPasswordValid(password)) {
+		throw new Error('Authentication failed. Error 3.')
+	}
+})
+
+/**
+ * Hashes the password before the user is saved
+ */
+UserSchema.pre('save', function (next) {
+	try {
+		if (this.isModified('password')) {
+			this.password = hashPassword(this.password)
+    }
+	} catch (err) {
+    console.log(err)
+		// return next(err)
+  }
+
+	next()
+})
+
+UserSchema.post('save', function (error, doc, next) {
+  checkForUserErrors(error)
+  next(error)
+})
 
 UserSchema.plugin(timestamps)
 
