@@ -9,6 +9,7 @@
   },
   "type": "module",
   "scripts": {
+    "schema": "node src/buildSchema.js",
     "watch": "nodemon src/index.js"
   },
   "keywords": [],
