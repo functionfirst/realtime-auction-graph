@@ -124,8 +124,6 @@ input CreateManyUserInput {
   password: String!
   admin: Boolean
   blocked: Boolean
-  updatedAt: Date
-  createdAt: Date
 }
 
 type CreateManyUserPayload {
@@ -183,8 +181,6 @@ input CreateOneUserInput {
   password: String!
   admin: Boolean
   blocked: Boolean
-  updatedAt: Date
-  createdAt: Date
 }
 
 type CreateOneUserPayload {
@@ -288,17 +284,6 @@ input FilterCountUser_idOperatorsInput {
   exists: Boolean
 }
 
-input FilterCountUserCreatedAtOperatorsInput {
-  gt: Date
-  gte: Date
-  lt: Date
-  lte: Date
-  ne: Date
-  in: [Date]
-  nin: [Date]
-  exists: Boolean
-}
-
 input FilterCountUserEmailOperatorsInput {
   gt: String
   gte: String
@@ -318,8 +303,6 @@ input FilterCountUserInput {
   admin: Boolean
   blocked: Boolean
   _id: MongoID
-  updatedAt: Date
-  createdAt: Date
 
   """List of *indexed* fields that can be filtered via operators."""
   _operators: FilterCountUserOperatorsInput
@@ -331,7 +314,6 @@ input FilterCountUserInput {
 input FilterCountUserOperatorsInput {
   email: FilterCountUserEmailOperatorsInput
   _id: FilterCountUser_idOperatorsInput
-  createdAt: FilterCountUserCreatedAtOperatorsInput
 }
 
 input FilterFindManyAuction_idOperatorsInput {
@@ -413,17 +395,6 @@ input FilterFindManyUser_idOperatorsInput {
   exists: Boolean
 }
 
-input FilterFindManyUserCreatedAtOperatorsInput {
-  gt: Date
-  gte: Date
-  lt: Date
-  lte: Date
-  ne: Date
-  in: [Date]
-  nin: [Date]
-  exists: Boolean
-}
-
 input FilterFindManyUserEmailOperatorsInput {
   gt: String
   gte: String
@@ -443,8 +414,6 @@ input FilterFindManyUserInput {
   admin: Boolean
   blocked: Boolean
   _id: MongoID
-  updatedAt: Date
-  createdAt: Date
 
   """List of *indexed* fields that can be filtered via operators."""
   _operators: FilterFindManyUserOperatorsInput
@@ -456,7 +425,6 @@ input FilterFindManyUserInput {
 input FilterFindManyUserOperatorsInput {
   email: FilterFindManyUserEmailOperatorsInput
   _id: FilterFindManyUser_idOperatorsInput
-  createdAt: FilterFindManyUserCreatedAtOperatorsInput
 }
 
 input FilterFindOneAuction_idOperatorsInput {
@@ -538,17 +506,6 @@ input FilterFindOneUser_idOperatorsInput {
   exists: Boolean
 }
 
-input FilterFindOneUserCreatedAtOperatorsInput {
-  gt: Date
-  gte: Date
-  lt: Date
-  lte: Date
-  ne: Date
-  in: [Date]
-  nin: [Date]
-  exists: Boolean
-}
-
 input FilterFindOneUserEmailOperatorsInput {
   gt: String
   gte: String
@@ -568,8 +525,6 @@ input FilterFindOneUserInput {
   admin: Boolean
   blocked: Boolean
   _id: MongoID
-  updatedAt: Date
-  createdAt: Date
 
   """List of *indexed* fields that can be filtered via operators."""
   _operators: FilterFindOneUserOperatorsInput
@@ -581,7 +536,6 @@ input FilterFindOneUserInput {
 input FilterFindOneUserOperatorsInput {
   email: FilterFindOneUserEmailOperatorsInput
   _id: FilterFindOneUser_idOperatorsInput
-  createdAt: FilterFindOneUserCreatedAtOperatorsInput
 }
 
 input FilterRemoveManyAuction_idOperatorsInput {
@@ -663,17 +617,6 @@ input FilterRemoveManyUser_idOperatorsInput {
   exists: Boolean
 }
 
-input FilterRemoveManyUserCreatedAtOperatorsInput {
-  gt: Date
-  gte: Date
-  lt: Date
-  lte: Date
-  ne: Date
-  in: [Date]
-  nin: [Date]
-  exists: Boolean
-}
-
 input FilterRemoveManyUserEmailOperatorsInput {
   gt: String
   gte: String
@@ -693,8 +636,6 @@ input FilterRemoveManyUserInput {
   admin: Boolean
   blocked: Boolean
   _id: MongoID
-  updatedAt: Date
-  createdAt: Date
 
   """List of *indexed* fields that can be filtered via operators."""
   _operators: FilterRemoveManyUserOperatorsInput
@@ -706,7 +647,6 @@ input FilterRemoveManyUserInput {
 input FilterRemoveManyUserOperatorsInput {
   email: FilterRemoveManyUserEmailOperatorsInput
   _id: FilterRemoveManyUser_idOperatorsInput
-  createdAt: FilterRemoveManyUserCreatedAtOperatorsInput
 }
 
 input FilterRemoveOneAuction_idOperatorsInput {
@@ -788,17 +728,6 @@ input FilterRemoveOneUser_idOperatorsInput {
   exists: Boolean
 }
 
-input FilterRemoveOneUserCreatedAtOperatorsInput {
-  gt: Date
-  gte: Date
-  lt: Date
-  lte: Date
-  ne: Date
-  in: [Date]
-  nin: [Date]
-  exists: Boolean
-}
-
 input FilterRemoveOneUserEmailOperatorsInput {
   gt: String
   gte: String
@@ -818,8 +747,6 @@ input FilterRemoveOneUserInput {
   admin: Boolean
   blocked: Boolean
   _id: MongoID
-  updatedAt: Date
-  createdAt: Date
 
   """List of *indexed* fields that can be filtered via operators."""
   _operators: FilterRemoveOneUserOperatorsInput
@@ -831,7 +758,6 @@ input FilterRemoveOneUserInput {
 input FilterRemoveOneUserOperatorsInput {
   email: FilterRemoveOneUserEmailOperatorsInput
   _id: FilterRemoveOneUser_idOperatorsInput
-  createdAt: FilterRemoveOneUserCreatedAtOperatorsInput
 }
 
 input FilterUpdateManyAuction_idOperatorsInput {
@@ -913,17 +839,6 @@ input FilterUpdateManyUser_idOperatorsInput {
   exists: Boolean
 }
 
-input FilterUpdateManyUserCreatedAtOperatorsInput {
-  gt: Date
-  gte: Date
-  lt: Date
-  lte: Date
-  ne: Date
-  in: [Date]
-  nin: [Date]
-  exists: Boolean
-}
-
 input FilterUpdateManyUserEmailOperatorsInput {
   gt: String
   gte: String
@@ -943,8 +858,6 @@ input FilterUpdateManyUserInput {
   admin: Boolean
   blocked: Boolean
   _id: MongoID
-  updatedAt: Date
-  createdAt: Date
 
   """List of *indexed* fields that can be filtered via operators."""
   _operators: FilterUpdateManyUserOperatorsInput
@@ -956,7 +869,6 @@ input FilterUpdateManyUserInput {
 input FilterUpdateManyUserOperatorsInput {
   email: FilterUpdateManyUserEmailOperatorsInput
   _id: FilterUpdateManyUser_idOperatorsInput
-  createdAt: FilterUpdateManyUserCreatedAtOperatorsInput
 }
 
 input FilterUpdateOneAuction_idOperatorsInput {
@@ -1038,17 +950,6 @@ input FilterUpdateOneUser_idOperatorsInput {
   exists: Boolean
 }
 
-input FilterUpdateOneUserCreatedAtOperatorsInput {
-  gt: Date
-  gte: Date
-  lt: Date
-  lte: Date
-  ne: Date
-  in: [Date]
-  nin: [Date]
-  exists: Boolean
-}
-
 input FilterUpdateOneUserEmailOperatorsInput {
   gt: String
   gte: String
@@ -1068,8 +969,6 @@ input FilterUpdateOneUserInput {
   admin: Boolean
   blocked: Boolean
   _id: MongoID
-  updatedAt: Date
-  createdAt: Date
 
   """List of *indexed* fields that can be filtered via operators."""
   _operators: FilterUpdateOneUserOperatorsInput
@@ -1081,7 +980,6 @@ input FilterUpdateOneUserInput {
 input FilterUpdateOneUserOperatorsInput {
   email: FilterUpdateOneUserEmailOperatorsInput
   _id: FilterUpdateOneUser_idOperatorsInput
-  createdAt: FilterUpdateOneUserCreatedAtOperatorsInput
 }
 
 """
@@ -1652,8 +1550,6 @@ input UpdateByIdUserInput {
   password: String
   admin: Boolean
   blocked: Boolean
-  updatedAt: Date
-  createdAt: Date
 }
 
 type UpdateByIdUserPayload {
@@ -1723,8 +1619,6 @@ input UpdateManyUserInput {
   password: String
   admin: Boolean
   blocked: Boolean
-  updatedAt: Date
-  createdAt: Date
 }
 
 type UpdateManyUserPayload {
@@ -1794,8 +1688,6 @@ input UpdateOneUserInput {
   password: String
   admin: Boolean
   blocked: Boolean
-  updatedAt: Date
-  createdAt: Date
 }
 
 type UpdateOneUserPayload {
@@ -1820,8 +1712,6 @@ type User {
   admin: Boolean
   blocked: Boolean
   _id: MongoID!
-  updatedAt: Date
-  createdAt: Date
 }
 
 """A connection to a list of items."""
