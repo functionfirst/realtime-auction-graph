@@ -1,0 +1,40 @@
+{
+  "name": "realtime-auction-graph",
+  "version": "1.0.0",
+  "description": "Realtime auction graph using mongodb and apollo server",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/functionfirst/realtime-auction-graph"
+  },
+  "type": "module",
+  "scripts": {
+    "watch": "nodemon src/index.js"
+  },
+  "keywords": [],
+  "author": "Alan Jenkins <alan@functionfirst.co.uk>",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-server-express": "^2.19.2",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "graphql": "^14.0.0",
+    "graphql-compose": "^7.24.4",
+    "graphql-compose-mongoose": "^9.0.0",
+    "mongoose": "^5.11.14",
+    "mongoose-bcrypt": "^1.9.0",
+    "mongoose-timestamp": "^0.6.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.19.0",
+    "eslint-plugin-compat": "^3.9.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "fs-extra": "^9.0.1",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.0.5"
+  }
+}
